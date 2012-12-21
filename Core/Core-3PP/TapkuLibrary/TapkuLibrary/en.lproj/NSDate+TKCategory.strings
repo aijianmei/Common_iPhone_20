@@ -1,0 +1,9 @@
+/* 
+  NSDate+TKCategory.strings
+  Travel
+
+  Created by haodong on 12-11-21.
+
+*/
+
+"kFormatMonthYear" = "MMMM yyyy";

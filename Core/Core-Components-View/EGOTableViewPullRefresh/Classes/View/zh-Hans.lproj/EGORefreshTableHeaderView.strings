@@ -1,0 +1,20 @@
+/* 
+  File.strings
+  Travel
+
+  Created by 小涛 王 on 12-6-7.
+  Copyright (c) 2012年 甘橙软件. All rights reserved.
+*/
+
+"kAM" = "上午";
+"kPM" = "下午";
+
+"kLastUpdatedDate" = "最后更新: %@";
+
+"kPullDownToRefresh" = "下拉可以刷新...";
+"kReleaseToRefresh" = "松开即可刷新...";
+"kLoading" = "数据加载中...";
+
+"kPullUpToLoadMore" = "上拉加载更多...";
+"kReleaseToLoadMore" = "松开加载更多...";
+"kMore" = "更多";
