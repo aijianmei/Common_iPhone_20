@@ -1,3 +1,6 @@
+
+
+
 bool Archive::GetComment(Array<byte> *CmtData,Array<wchar> *CmtDataW)
 {
   if (!MainComment)

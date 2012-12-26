@@ -251,6 +251,44 @@
 	return retViewController;
 }
 
+
+/////add the methods ,and we invoke it when we use the storybaord .
++ (UIViewController*)addViewControllerFromStoryBoard:(UIViewController*)viewControllerAllocObject viewTitle:(NSString*)viewTitle viewImage:(NSString*)viewImage hasNavController:(BOOL)hasNavController hideNavigationBar:(BOOL)hideNavigationBar viewControllers:(NSMutableArray*)viewControllers
+{
+    
+    UIViewController* retViewController = viewControllerAllocObject;
+	UITabBarItem* button1 = [[UITabBarItem alloc] initWithTitle:viewTitle image:[UIImage imageNamed:viewImage] tag:0];
+	
+	if (hasNavController){
+		UINavigationController *navController1 = [[UINavigationController alloc] initWithRootViewController:retViewController];
+		[viewControllers addObject:navController1];
+        navController1.navigationBarHidden = hideNavigationBar;
+		navController1.tabBarItem = button1;
+		navController1.title = viewTitle;
+		retViewController.title = viewTitle;
+        
+        [navController1 release];
+	}
+	else {
+		[viewControllers addObject:retViewController];
+		retViewController.tabBarItem = button1;
+	}
+    
+    [button1 release];
+	return retViewController;
+    
+}
+
+
+/////add the methods ,and we invoke it when we use the storybaord .
++ (UIViewController*)addViewControllerFromStoryBoard:(UIViewController*)viewControllerFromStoryBoardObject viewTitle:(NSString*)viewTitle viewImage:(NSString*)viewImage hasNavController:(BOOL)hasNavController viewControllers:(NSMutableArray*)viewControllers
+{
+    return [UIUtils addViewControllerFromStoryBoard:viewControllerFromStoryBoardObject viewTitle:viewTitle viewImage:viewImage hasNavController:hasNavController hideNavigationBar:NO viewControllers:viewControllers];
+}
+
+
+
+
 + (UIViewController*)addViewController:(NSObject*)viewControllerAllocObject viewTitle:(NSString*)viewTitle viewImage:(NSString*)viewImage hasNavController:(BOOL)hasNavController viewControllers:(NSMutableArray*)viewControllers
 {
     return [UIUtils addViewController:viewControllerAllocObject viewTitle:viewTitle viewImage:viewImage hasNavController:hasNavController hideNavigationBar:NO viewControllers:viewControllers];

@@ -40,6 +40,18 @@
 
 + (UIViewController*)addViewController:(NSObject*)viewControllerAllocObject viewTitle:(NSString*)viewTitle viewImage:(NSString*)viewImage hasNavController:(BOOL)hasNavController hideNavigationBar:(BOOL)hideNavigationBar viewControllers:(NSMutableArray*)viewControllers;
 
+
+
+/////////TomCallon add these two methods  ////Fri Aug 17th 10:57pm
+/////add the methods ,and we invoke it when we use the storybaord .
++ (UIViewController*)addViewControllerFromStoryBoard:(NSObject*)viewControllerFromStoryBoardObject viewTitle:(NSString*)viewTitle viewImage:(NSString*)viewImage hasNavController:(BOOL)hasNavController viewControllers:(NSMutableArray*)viewControllers;
+
+
+/////add the methods ,and we invoke it when we use the storybaord .
++ (UIViewController*)addViewControllerFromStoryBoard:(NSObject*)viewControllerFromStoryBoardObject viewTitle:(NSString*)viewTitle viewImage:(NSString*)viewImage hasNavController:(BOOL)hasNavController hideNavigationBar:(BOOL)hideNavigationBar viewControllers:(NSMutableArray*)viewControllers;
+
+
+
 + (UIViewController*)addInitViewController:(UIViewController*)viewController viewTitle:(NSString*)viewTitle viewImage:(NSString*)viewImage hasNavController:(BOOL)hasNavController hideNavigationBar:(BOOL)hideNavigationBar viewControllers:(NSMutableArray*)viewControllers;
 
 + (void)openURL:(NSString*)url;

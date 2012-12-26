@@ -14,8 +14,12 @@
 //#define kWBSDKDemoAppKey
 //#define kWBSDKDemoAppSecret
 
+///画画猜猜
 #define kWBSDKDemoAppKey        @"2831348933"
 #define kWBSDKDemoAppSecret     @"ff89c2f5667b0199ee7a8bad6c44b265"
+//爱健美
+//#define kWBSDKDemoAppKey        @"239725454"
+//#define kWBSDKDemoAppSecret     @"e2064ac8fab9d889a9eccecc5babad11"
 
 #ifndef kWBSDKDemoAppKey
 #error
