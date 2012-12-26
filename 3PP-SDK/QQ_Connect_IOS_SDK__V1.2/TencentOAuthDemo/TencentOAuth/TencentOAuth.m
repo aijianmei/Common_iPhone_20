@@ -7,6 +7,7 @@
 //
 
 #import "TencentOAuth.h"
+#import "JSON.h"
 
 
 static NSString* kGraphBaseURL = @"https://graph.qq.com/oauth2.0/";

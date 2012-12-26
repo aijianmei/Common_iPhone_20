@@ -7,6 +7,7 @@
 //
 
 #import "tencentOAuthDemoViewController.h"
+#import "QFObject.h"
 
 @implementation tencentOAuthDemoViewController
 
@@ -433,7 +434,7 @@
 		
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%", response.errorMsg]
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%@", response.errorMsg]
 							  
 													   delegate:self cancelButtonTitle:@"我知道啦" otherButtonTitles: nil];
 		[alert show];
@@ -462,7 +463,7 @@
 		
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%", response.errorMsg]
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%@", response.errorMsg]
 							  
 													   delegate:self cancelButtonTitle:@"我知道啦" otherButtonTitles: nil];
 		[alert show];
@@ -492,7 +493,7 @@
 		
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%", response.errorMsg]
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%@", response.errorMsg]
 							  
 													   delegate:self cancelButtonTitle:@"我知道啦" otherButtonTitles: nil];
 		[alert show];
@@ -519,7 +520,7 @@
 		[alert show];
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%", response.errorMsg]
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%@", response.errorMsg]
 							  
 													   delegate:self cancelButtonTitle:@"我知道啦" otherButtonTitles: nil];
 		[alert show];
@@ -548,7 +549,7 @@
 		
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%", response.errorMsg]
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%@", response.errorMsg]
 							  
 													   delegate:self cancelButtonTitle:@"我知道啦" otherButtonTitles: nil];
 		[alert show];
@@ -578,7 +579,7 @@
 		
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%", response.errorMsg]
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%@", response.errorMsg]
 							  
 													   delegate:self cancelButtonTitle:@"我知道啦" otherButtonTitles: nil];
 		[alert show];
@@ -625,7 +626,7 @@
 		
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%", response.errorMsg]
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%@", response.errorMsg]
 							  
 													   delegate:self cancelButtonTitle:@"我知道啦" otherButtonTitles: nil];
 		[alert show];
@@ -660,7 +661,7 @@
 		
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%", response.errorMsg]
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%@", response.errorMsg]
 							  
 													   delegate:self cancelButtonTitle:@"我知道啦" otherButtonTitles: nil];
 		[alert show];
@@ -689,7 +690,7 @@
 		
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%", response.errorMsg]
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作失败" message:[NSString stringWithFormat:@"%@", response.errorMsg]
 							  
 													   delegate:self cancelButtonTitle:@"我知道啦" otherButtonTitles: nil];
 		[alert show];

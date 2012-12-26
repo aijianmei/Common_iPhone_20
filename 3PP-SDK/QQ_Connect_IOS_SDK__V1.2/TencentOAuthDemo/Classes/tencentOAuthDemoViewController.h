@@ -40,5 +40,8 @@
 	UILabel                *_labeladdblog;
 }
 
+-(void)tencentDidNotNetWork;
+
+
 @end
 
