@@ -202,8 +202,20 @@
 					  @"upload_pic",@"list_photo", @"add_album", @"check_page_fans",nil] retain];
 	
 	
-	_tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"100266567"
-											andDelegate:self];
+//	_tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"100266567"
+    
+    
+    
+   //  爱健美 账号
+    _tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"100669978"
+                                            andDelegate:self];
+    
+    
+    //  爱健美客户端 账号
+//    _tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"801268224"									andDelegate:self];
+//
+    
+    
 	_tencentOAuth.redirectURI = @"www.qq.com";
 	
 	
@@ -241,7 +253,16 @@
  */
 - (void)onClickGetUserInfo {
 	_labelNickName.text = @"开始获取用户基本信息";
-	[_tencentOAuth getUserInfo];
+    NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+								   @"腾讯内部addShare接口测试", @"title",
+								   @"http://www.qq.com", @"url",
+								   @"风云乔帮主",@"comment",
+								   @"乔布斯被认为是计算机与娱乐业界的标志性人物，同时人们也把他视作麦金塔计算机、iPod、iTunes、iPad、iPhone等知名数字产品的缔造者，这些风靡全球亿万人的电子产品，深刻地改变了现代通讯、娱乐乃至生活的方式。",@"summary",
+								   @"http://img1.gtimg.com/tech/pics/hv1/95/153/847/55115285.jpg",@"images",
+								   @"4",@"source",
+								   nil];
+	
+	[_tencentOAuth addShareWithParams:params];
 }
 /**
  * add Share.
