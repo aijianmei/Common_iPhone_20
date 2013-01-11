@@ -853,6 +853,8 @@
     self.reverseGeocoder = [[[MKReverseGeocoder alloc] initWithCoordinate:coordinate] autorelease];
     reverseGeocoder.delegate = self;
     [reverseGeocoder start];
+    
+    
 }
 
 - (void)reverseGeocodeCurrentLocation:(CLLocation *)location

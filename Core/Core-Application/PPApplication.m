@@ -163,9 +163,13 @@ BOOL isFree()
 
 - (void)reverseGeocodeCurrentLocation:(CLLocation *)location
 {
+    
     self.reverseGeocoder = [[[MKReverseGeocoder alloc] initWithCoordinate:location.coordinate] autorelease];
     reverseGeocoder.delegate = self;
     [reverseGeocoder start];
+    
+    
+    
 }
 
 - (void)reverseGeocoder:(MKReverseGeocoder *)geocoder didFailWithError:(NSError *)error
