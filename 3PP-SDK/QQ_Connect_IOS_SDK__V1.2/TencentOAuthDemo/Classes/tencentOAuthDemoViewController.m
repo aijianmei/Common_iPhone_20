@@ -202,13 +202,13 @@
 					  @"upload_pic",@"list_photo", @"add_album", @"check_page_fans",nil] retain];
 	
 	
-//	_tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"100266567"
+	_tencentOAuth =  [[TencentOAuth alloc] initWithAppId:@"100266567" andDelegate:self];
     
     
     
    //  爱健美 账号
-    _tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"100669978"
-                                            andDelegate:self];
+//    _tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"100669978"
+//                                            andDelegate:self];
     
     
     //  爱健美客户端 账号

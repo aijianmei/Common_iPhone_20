@@ -438,6 +438,14 @@ static CGFloat kBorderWidth = 0;
 
 #pragma mark - UIWebView Delegate
 
+
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+
+    NSLog(@"weiview did started loading");
+    [self showIndicator];
+
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView
 {
 	[self hideIndicator];

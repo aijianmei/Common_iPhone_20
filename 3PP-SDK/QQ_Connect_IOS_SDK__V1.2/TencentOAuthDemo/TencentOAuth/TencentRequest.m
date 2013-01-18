@@ -268,6 +268,10 @@ responseText = _responseText;
 	if ([_delegate respondsToSelector:@selector(request:didFailWithError:)]) {
 		[_delegate request:self didFailWithError:error];
 	}
+    
+    
+    
+    
 }
 
 /*

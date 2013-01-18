@@ -28,8 +28,8 @@ static NSString* kMe = @"me";
 
 @interface TencentOAuth ()
 
-// private properties
-@property(nonatomic, retain) NSArray* permissions;
+//// private properties
+//@property(nonatomic, retain) NSArray* permissions;
 
 @end
 
@@ -60,8 +60,62 @@ redirectURI = _redirectURI;
 				
 		_redirectURI = [[NSString alloc] initWithString:kRedirectURL];
 		_apiRequests = [[NSMutableDictionary alloc] init];
+    
 	}
 	return self;
+}
+
+
+- (void)login {
+    
+    ////在登陆之前要首先判断 sessionValid 是否可用 ，以及openIdValid 是否可用。
+    if ([self isSessionValid] && [self isOpenIdValid]) {
+        
+       if ([_sessionDelegate respondsToSelector:@selector(tencentDidLogin)])
+        {
+            [_sessionDelegate tencentDidLogin];
+        }
+        
+        
+    }else{
+        
+        [self removeAuthData];
+        [self authorize:_permissions inSafari:NO];
+    }
+}
+
+
+/**
+ * @description 退出方法，需要退出时直接调用此方法
+ */
+- (void)logOut
+{
+    [self removeAuthData];
+    
+    if ([_sessionDelegate respondsToSelector:@selector(tencentDidLogout)])
+    {
+        [_sessionDelegate tencentDidLogout];
+    }
+}
+
+
+/**
+ * @description 清空认证信息
+ */
+- (void)removeAuthData
+{
+    self.accessToken = nil;
+    self.expirationDate = nil;
+    self.openId = nil;
+    
+    NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSArray* tencentQQCookies = [cookies cookiesForURL:
+                                 [NSURL URLWithString:@"https://graph.qq.com/"]];
+    
+    for (NSHTTPCookie* cookie in tencentQQCookies)
+    {
+        [cookies deleteCookie:cookie];
+    }
 }
 
 /**
@@ -216,6 +270,7 @@ redirectURI = _redirectURI;
 
 
 - (void)logout:(id<TencentSessionDelegate>)delegate {
+    
 
 }
 
@@ -291,6 +346,11 @@ redirectURI = _redirectURI;
 	return (self.accessToken != nil && self.expirationDate != nil
 						&& NSOrderedDescending == [self.expirationDate compare:[NSDate date]]);
 	
+}
+
+-(BOOL)isLogIn{
+    
+    return ([self isSessionValid] && [self isOpenIdValid]);
 }
 
 - (BOOL)isOpenIdValid {
@@ -640,9 +700,12 @@ redirectURI = _redirectURI;
 //TencentLoginViewDelegate
 
 /**
- * Set the authToken and expirationDate after login succeed
+ * Set the authToken and expirationDate after login succeed  首先要获取accessToken 和expirationDate 的信息 ，然后再获取个人的信息。
  */
+
 - (void)tencentDialogLogin:(NSString *)token expirationDate:(NSDate *)expirationDate {
+    
+    
 	self.accessToken = token;
 	self.expirationDate = expirationDate;
 	// 继续获取openid
@@ -656,7 +719,8 @@ redirectURI = _redirectURI;
 //	if ([self.sessionDelegate respondsToSelector:@selector(tencentDidLogin)]) {
 //		[_sessionDelegate tencentDidLogin];
 //	}
-	
+    	
+    
 }
 
 /**
@@ -673,6 +737,8 @@ redirectURI = _redirectURI;
 - (void)tencentDidNotNetWork{
 	if ([self.sessionDelegate respondsToSelector:@selector(tencentDidNotNetWork)]) {
 		[_sessionDelegate tencentDidNotNetWork];
+        
+        
 	}
 }
 
@@ -691,6 +757,8 @@ redirectURI = _redirectURI;
 
 - (void)request:(TencentRequest *)request didReceiveResponse:(NSURLResponse *)response {
 	NSLog(@"received response");
+    
+
 }
 
 /**
@@ -726,6 +794,9 @@ redirectURI = _redirectURI;
 		[_sessionDelegate tencentDidLogin];
 	}
 	NSLog(@"received didLoad success clientid=%@, openid=%@", client_id, openid);
+    
+    
 };
+
 
 @end

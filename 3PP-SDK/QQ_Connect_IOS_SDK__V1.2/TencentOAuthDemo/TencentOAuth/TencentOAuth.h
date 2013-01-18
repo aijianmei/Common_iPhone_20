@@ -38,6 +38,8 @@
 @property(nonatomic, copy) NSString* localAppId;
 @property(nonatomic, copy) NSString* openId;
 @property(nonatomic, copy) NSString* redirectURI;
+// public properties
+@property(nonatomic, retain) NSArray* permissions;
 
 /*!
  @method     initWithAppId:andDelegate:
@@ -46,12 +48,32 @@
  */
 - (id)initWithAppId:(NSString *)appId
         andDelegate:(id<TencentSessionDelegate>)delegate;
+/**
+ * @description 清空认证信息
+ */
+- (void)removeAuthData;
+
+/*!
+ @method     login
+ @param      nil
+ @param       
+ */
+- (void)login;
+
+/*!
+ @method     logout
+ @param      nil
+ @param
+ */
+- (void)logOut;
 
 /*!
  @method     authorize:inSafari:
  @param      permissions permissions
  @param      bInSafari bInSafari
  */
+
+
 - (void)authorize:(NSArray *)permissions 
 		 inSafari:(BOOL)bInSafari;
 
@@ -131,6 +153,13 @@
  @method     isSessionValid
  */
 - (BOOL)isSessionValid;
+
+
+/*!
+ @method     isLogIn
+ */
+- (BOOL)isLogIn;
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //APIs, can be called after accesstoken and openid have received 
@@ -271,6 +300,17 @@
  @discussion Called when the user logged out.
  */
 - (void)tencentDidLogout;
+
+
+/**
+ * Called when the user accessTokenInvalidOrExpired
+ */
+/*!
+ @method     tencent:accessTokenInvalidOrExpired:
+ @discussion Called when the user logged out.
+ */
+- (void)tencent:(TencentOAuth *)tencentOAuth accessTokenInvalidOrExpired:(NSError *)error;
+
 
 /**
  * Called when the get_user_info has response.

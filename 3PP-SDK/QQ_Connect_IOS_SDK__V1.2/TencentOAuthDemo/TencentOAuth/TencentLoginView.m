@@ -284,10 +284,12 @@ params   = _params;
 }
 
 - (void)cancel {
+
 	[self dialogDidCancel:nil];
 	if ([_delegate respondsToSelector:@selector(tencentDialogNotLogin:)]) {
 		[_delegate tencentDialogNotLogin:YES];
-	}	
+	}
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -657,6 +659,7 @@ params   = _params;
 		[_delegate dialogDidNotCompleteWithUrl:url];
 	}
 	[self dismissWithSuccess:NO animated:YES];
+    
 }
 
 @end
