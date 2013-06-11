@@ -1135,6 +1135,7 @@ static BOOL G_LOGOUT = NO;
     return name && accessToken && refreshToken;
 }
 
+
 //登录
 - (void)logInWithDelegate:(id) requestDelegate  
                 onSuccess:(SEL)successCallback 
@@ -1147,7 +1148,7 @@ static BOOL G_LOGOUT = NO;
 //    if ([redirectURI length] <= 0) {
 //        self.redirectURI = REDIRECTURI;
 //    }
-
+   
     NSDictionary *params = [[NSDictionary alloc]initWithObjectsAndKeys:appKey,CLIENT_ID,
                             TOKEN, RESPONSE_TYPE,
                             redirectURI,REDIRECT_URI,

@@ -301,17 +301,6 @@
  */
 - (void)tencentDidLogout;
 
-
-/**
- * Called when the user accessTokenInvalidOrExpired
- */
-/*!
- @method     tencent:accessTokenInvalidOrExpired:
- @discussion Called when the user logged out.
- */
-- (void)tencent:(TencentOAuth *)tencentOAuth accessTokenInvalidOrExpired:(NSError *)error;
-
-
 /**
  * Called when the get_user_info has response.
  */

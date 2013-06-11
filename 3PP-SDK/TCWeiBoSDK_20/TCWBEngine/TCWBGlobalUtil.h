@@ -13,6 +13,13 @@
 //#define WiressSDKDemoAppSecret  @"9819935c0ad171df934d0ffb340a3c2d"
 //#define REDIRECTURI             @"http://www.ying7wang7.com"
 
+
+#define WiressSDKDemoAppKey     @"801268224"
+#define WiressSDKDemoAppSecret  @"38c66b4cb066895c6afaab1aff675835"
+#define REDIRECTURI             @"http://www.aijianmei.com"
+
+
+
 #define TCWBSDKAPIDomain        @"https://open.t.qq.com/api/"
 #define kWBAuthorizeURL         @"https://open.t.qq.com/cgi-bin/oauth2/authorize/ios"
 #define kWBAccessTokenURL       @"https://open.t.qq.com/cgi-bin/oauth2/access_token"

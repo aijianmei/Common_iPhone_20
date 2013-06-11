@@ -1172,6 +1172,44 @@
     [notifications removeAllObjects];
 }
 
+#pragma mark -
+#pragma mark Hide and Show TabBar Methods
+
+- (void)showTabBar {
+    UITabBar *tabBar = self.tabBarController.tabBar;
+    UIView *parent = tabBar.superview; // UILayoutContainerView
+    UIView *content = [parent.subviews objectAtIndex:0]; // UITransitionView
+    UIView *window = parent.superview;
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         CGRect tabFrame = tabBar.frame;
+                         tabFrame.origin.y = CGRectGetMaxY(window.bounds) - CGRectGetHeight(tabBar.frame);
+                         tabBar.frame = tabFrame;
+                         CGRect contentFrame = content.frame;
+                         contentFrame.size.height -= tabFrame.size.height;
+                     }];
+}
+
+
+- (void)hideTabBar {
+    UITabBar *tabBar = self.tabBarController.tabBar;
+    UIView *parent = tabBar.superview; // UILayoutContainerView
+    UIView *content = [parent.subviews objectAtIndex:0];  // UITransitionView
+    UIView *window = parent.superview;
+    
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         CGRect tabFrame = tabBar.frame;
+                         tabFrame.origin.y = CGRectGetMaxY(window.bounds);
+                         tabBar.frame = tabFrame;
+                         content.frame = window.bounds;
+                     }];
+    
+}
+
+
+
+
 @end
 
 

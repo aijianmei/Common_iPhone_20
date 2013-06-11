@@ -342,6 +342,8 @@
 
 - (void)logInInView:(UIView *)view
 {
+    
+    
     if ([self isAuthValid])
     {
         if ([delegate respondsToSelector:@selector(sinaweiboDidLogIn:)])
