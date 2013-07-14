@@ -1114,6 +1114,25 @@
     return scrollView;   
 }
 
+//Create the button with different size according to the button titles 
++ (UIScrollView*)createButtonScrollViewByButtonArrayAccordingToButtonTitleSize:(NSArray*)buttons
+                                      buttonsPerLine:(int)buttonsPerLine buttonSeparatorY:(CGFloat)buttonSeparatorY
+{
+    UIScrollView* scrollView = [[[UIScrollView alloc] init] autorelease];
+    for (int i=0; i<[buttons count]; i++) {
+        UIButton *buttonBefore = [buttons objectAtIndex:i-1];
+        UIButton *button = [buttons objectAtIndex:i];
+        button.frame = CGRectMake(buttonBefore.frame.origin.x +20,buttonBefore.frame.origin.y,button.bounds.size.width,button.bounds.size.height);
+        [scrollView addSubview:button];
+    }
+    [scrollView setContentSize:CGSizeMake(320, 33)];
+    [scrollView setBackgroundColor:[UIColor colorWithRed:0xF8/255.0
+                                                   green:0xFC/255.0
+                                                    blue:0xFE/255.0
+                                                   alpha:1]];
+    return scrollView;
+}
+
 
 - (void)registerNotificationWithName:(NSString *)name 
                               object:(id)obj 

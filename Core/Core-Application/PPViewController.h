@@ -142,7 +142,12 @@
 
 + (UIScrollView*)createButtonScrollViewByButtonArray:(NSArray*)buttons 
                                       buttonsPerLine:(int)buttonsPerLine 
-                                    buttonSeparatorY:(CGFloat)buttonSeparatorY; 
+                                    buttonSeparatorY:(CGFloat)buttonSeparatorY;
+
+//Create the button with different size according to the button titles
++ (UIScrollView*)createButtonScrollViewByButtonArrayAccordingToButtonTitleSize:(NSArray*)buttons
+                                                                buttonsPerLine:(int)buttonsPerLine buttonSeparatorY:(CGFloat)buttonSeparatorY;
+
 
 - (UIViewController *)superViewControllerForClass:(Class)controllerClass;
 - (BOOL)hasSuperViewControllerForClass:(Class)controllerClass;
