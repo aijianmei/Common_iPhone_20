@@ -727,7 +727,7 @@
 -(void)sendSms:(NSString*)receiver body:(NSString*)body
 {
 	NSLog(@"<sendSms> receiver=%@, body=%@", receiver, body);
-	MFMessageComposeViewController* vc = [[[MFMessageComposeViewController alloc] init] autorelease];
+	MFMessageComposeViewController* vc = [[[MFMessageComposeViewController alloc] init] autorelease];    
 	vc.messageComposeDelegate = self;
 	vc.body = body;
     
