@@ -17,3 +17,5 @@
 #define PARA_MAC            @"mac"
 
 #define SHARE_KEY            @"gckj_share_key"
+
+

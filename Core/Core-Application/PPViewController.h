@@ -33,7 +33,7 @@
 	
 	TKLoadingView*          loadingView;
 	
-	UIAlertView				*alertView;
+	UIAlertView				*tomcallonalertView;
 	int						alertAction;	
 	NSTimer					*timer;
 	

@@ -86,7 +86,10 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setAllowCompressedResponse:YES];
     [request setTimeOutSeconds:UPLOAD_TIMEOUT];
-    [request setData:uploadData withFileName:@"pp" andContentType:@"image/jpeg" forKey:@"photo"];
+    [request setData:uploadData
+        withFileName:@"pp"
+      andContentType:@"image/jpeg"
+              forKey:@"photo"];
       
     int startTime = time(0);
     PPDebug(@"[SEND] UPLOAD DATA URL=%@", [url description]);    
@@ -121,6 +124,7 @@
         }
         
         output.resultCode = [[dataDict objectForKey:RET_CODE] intValue];
+        
         responseHandler(dataDict, output);
         
         return output;
@@ -225,7 +229,6 @@
 	return retUrl;
 }
 
-
 + (CommonNetworkOutput*)sendRequest:(NSString*)baseURL
                 constructURLHandler:(ConstructURLBlock)constructURLHandler
                     responseHandler:(PPNetworkResponseBlock)responseHandler
@@ -237,7 +240,10 @@
         return nil;
     }
     
+    
+    //用于加密 以及记录发送请求的时间
     NSString* urlString = [PPNetworkRequest appendTimeStampAndMacToURL:constructURLHandler(baseURL) shareKey:SHARE_KEY];
+    
     
     NSURL* url = [NSURL URLWithString:[urlString stringByURLEncode]];    
     if (url == nil){
@@ -283,7 +289,8 @@
         else{
             
             NSStringEncoding encoding = NSUTF8StringEncoding;        
-            NSString *text = [[[NSString alloc] initWithData:[request responseData] encoding:encoding] autorelease];
+            NSString *text = [[[NSString alloc] initWithData:[request responseData]
+                                                    encoding:encoding] autorelease];
             PPDebug(@"[RECV] data statistic (len=%d bytes, latency=%d seconds, raw=%d bytes, real=%d bytes)", 
                     [text length], (endTime - startTime),
                     [[request rawResponseData] length], [[request responseData] length]);
@@ -294,7 +301,13 @@
                 return output;
             }
             
-            output.resultCode = [[dataDict objectForKey:RET_CODE] intValue];
+//          output.resultCode = [[dataDict objectForKey:RET_CODE] intValue];
+            
+//            NSArray *array = [text JSONValue];
+//            output.resultCode = [[[array  objectAtIndex:0]  objectForKey:@"errorCode"] intValue];
+//
+//            PPDebug(@"%@",[[array  objectAtIndex:0]  objectForKey:@"errorCode"]);
+            
             responseHandler(dataDict, output);
         }
         

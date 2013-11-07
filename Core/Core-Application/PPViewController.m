@@ -912,7 +912,7 @@
         
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-        picker.allowsEditing = YES;
+        picker.allowsEditing = NO;
         picker.delegate = self;
         [self presentModalViewController:picker animated:YES];
         [picker release];
@@ -927,7 +927,7 @@
 
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        picker.allowsEditing = YES;
+        picker.allowsEditing = NO;
         picker.delegate = self;
         [self presentModalViewController:picker animated:YES];  
         [picker release];
