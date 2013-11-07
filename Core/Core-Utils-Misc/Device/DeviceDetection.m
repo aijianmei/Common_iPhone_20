@@ -79,6 +79,16 @@ static NSInteger deviceModel = MODEL_UNKNOWN;
         return NO;
 }
 
++ (BOOL)isOS7
+{
+    NSString *ver = [[UIDevice currentDevice] systemVersion];
+    int ver_int = [ver intValue];
+    if (ver_int >= 7)
+        return YES;
+    else
+        return NO;
+}
+
 + (BOOL)canSendSms
 {
 	return [MFMessageComposeViewController canSendText];

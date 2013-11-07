@@ -22,6 +22,7 @@ enum {
 	MODEL_IPHONE_4G,
     MODEL_IPHONE_4GS,
     MODEL_IPHONE_5G,
+    MODEL_IPHONE_5GS,
 	MODEL_IPAD
 };
 
@@ -49,6 +50,7 @@ typedef enum{
 + (BOOL) isOS4;
 + (BOOL) isOS5;
 + (BOOL) isOS6;
++ (BOOL) isOS7;
 + (BOOL) canSendSms;
 + (BOOL) isIPAD;
 + (BOOL) isIPhone5;

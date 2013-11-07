@@ -130,7 +130,9 @@ StatusView *globalStatusView;
         globalStatusView = [[StatusView alloc] init];
     }
     
-    [globalStatusView showStatusWithText:text vibrate:vibrate duration:duration];
+    [globalStatusView showStatusWithText:text
+                                 vibrate:vibrate
+                                duration:duration];
     
     
 }
