@@ -399,6 +399,9 @@
                          httpMethod:(NSString *)httpMethod
                            delegate:(id<SinaWeiboRequestDelegate>)_delegate
 {
+    
+    
+    
     if (params == nil)
     {
         params = [NSMutableDictionary dictionary];
@@ -408,7 +411,6 @@
     {
         [params setValue:self.accessToken forKey:@"access_token"];
         NSString *fullURL = [kSinaWeiboSDKAPIDomain stringByAppendingString:url];
-        
         SinaWeiboRequest *_request = [SinaWeiboRequest requestWithURL:fullURL
                                                            httpMethod:httpMethod
                                                                params:params
@@ -427,6 +429,8 @@
         
         return nil;
     }
+    
+    
 }
 
 #pragma mark - SinaWeiboAuthorizeView Delegate
