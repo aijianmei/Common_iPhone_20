@@ -17,6 +17,7 @@
 #import "UIImageUtil.h"
 #import "PPDebug.h"
 #import "DeviceDetection.h"
+#import "ProgressHUD.h"
 
 @implementation PPViewController
 
@@ -353,6 +354,31 @@
 	[loadingView stopAnimating];
 	loadingView.hidden = YES;
 }
+
+
+#pragma mark activity ProgressHD loading view
+- (void)showProgressHUDActivityWithText:(NSString*)loadingText
+{
+    [ProgressHUD show:loadingText];
+}
+-(void)showSucceedProgressHUDActivity:(NSString *)succeedText
+{
+    [ProgressHUD showSuccess:succeedText];
+}
+-(void)showErrorProgressHUDActivity:(NSString *)errorText
+{
+    [ProgressHUD show:errorText];
+}
+- (void)showProgressHUDActivity
+{
+    [ProgressHUD show:@""];
+}
+- (void)hideProgressHUDActivity
+{
+    [ProgressHUD dismiss];
+}
+
+
 
 #pragma mark background selector execution
 

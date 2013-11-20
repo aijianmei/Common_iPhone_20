@@ -17,12 +17,18 @@
 #import "UIBlankView.h"
 #import "PPDebug.h"
 
+
+
+
+
 #define kDefaultBarButton			@"barbutton.png"
 
 #define kLocationUpdateTimeOut		60.0
 #define kTimeOutObjectString		@"Time out"
 
 @class PPSegmentControl;
+@class ProgressHUD;
+
 
 @interface PPViewController : UIViewController <MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate, MKReverseGeocoderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
 
@@ -32,6 +38,9 @@
 	ABAddressBookRef		addressBook;
 	
 	TKLoadingView*          loadingView;
+    
+    ProgressHUD             *progressHUDView;
+
 	
 	UIAlertView				*tomcallonalertView;
 	int						alertAction;	
@@ -56,6 +65,12 @@
 @property (nonatomic, assign) BOOL                  enableAddressBook;
 
 @property (nonatomic, retain) TKLoadingView*        loadingView;
+
+@property (nonatomic, retain) ProgressHUD*  progressHUDView;
+
+
+
+
 @property (nonatomic, retain) NSTimer				*timer;
 @property (nonatomic, retain) NSString*				backgroundImageName;
 @property (nonatomic, retain) UIAlertView			*alertView;
@@ -91,10 +106,20 @@
 // this method helps you to performa an internal method with loading view
 - (void)performSelectorWithLoading:(SEL)aSelector loadingText:(NSString*)loadingText;
 
+
+#pragma mark activity loading view
 - (void)showActivityWithText:(NSString*)loadingText withCenter:(CGPoint)point;
 - (void)showActivityWithText:(NSString*)loadingText;
 - (void)showActivity;
 - (void)hideActivity;
+
+#pragma mark activity ProgressHD loading view
+- (void)showProgressHUDActivityWithText:(NSString*)loadingText;
+- (void)showSucceedProgressHUDActivity:(NSString *)succeedText;
+- (void)showErrorProgressHUDActivity:(NSString *)errorText;
+- (void)showProgressHUDActivity;
+- (void)hideProgressHUDActivity;
+
 
 // Send Email Methods
 - (BOOL)sendEmailTo:(NSArray*)toRecipients 

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "PPSNSCommonService.h"
 #import "PPSNSConstants.h"
+#import "LogUtil.h"
+
 
 @interface PPSNSCommonRequest : NSObject
 

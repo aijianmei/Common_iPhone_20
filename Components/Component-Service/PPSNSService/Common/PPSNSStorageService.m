@@ -7,6 +7,7 @@
 //
 
 #import "PPSNSStorageService.h"
+#import "LogUtil.h"
 
 @implementation PPSNSStorageService
 

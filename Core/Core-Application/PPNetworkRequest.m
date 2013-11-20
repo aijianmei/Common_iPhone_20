@@ -301,13 +301,12 @@
                 return output;
             }
             
-//          output.resultCode = [[dataDict objectForKey:RET_CODE] intValue];
+            if ([dataDict count] ==0) {
+                responseHandler(dataDict, output);
+            }
             
-//            NSArray *array = [text JSONValue];
-//            output.resultCode = [[[array  objectAtIndex:0]  objectForKey:@"errorCode"] intValue];
-//
-//            PPDebug(@"%@",[[array  objectAtIndex:0]  objectForKey:@"errorCode"]);
-            
+            output.resultCode = [[dataDict objectForKey:RET_CODE] intValue];
+
             responseHandler(dataDict, output);
         }
         

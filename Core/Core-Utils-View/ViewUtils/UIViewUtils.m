@@ -18,7 +18,12 @@
 	self.backgroundColor = [UIColor clearColor];
 	
 	CGRect frame = self.bounds;
-	
+   
+    
+    //after IOS7 
+    frame.size.height = frame.size.height + 44;
+    
+    
 	// create view
 	UIImageView* bgview = [[UIImageView alloc] initWithFrame:frame];
 	
