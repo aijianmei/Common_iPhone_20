@@ -17,6 +17,10 @@
 #import "UIBlankView.h"
 #import "PPDebug.h"
 
+///
+#import "AMScrollingNavbarViewController.h"
+
+
 
 
 
@@ -30,7 +34,7 @@
 @class ProgressHUD;
 
 
-@interface PPViewController : UIViewController <MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate, MKReverseGeocoderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface PPViewController : AMScrollingNavbarViewController <MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate, MKReverseGeocoderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
 
 	NSString*				backgroundImageName;
 	
